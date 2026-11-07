@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal académico de Ciencia de Datos, Machine Learning, Deep Learning y aplicaciones interactivas desarrolladas en R Shiny.">
+  <title>DataScience Hub | Analítica, Machine Learning e IA</title>
+  <style>
+    :root{
+      --navy:#0f172a; --blue:#2563eb; --sky:#0ea5e9; --cyan:#06b6d4;
+      --ink:#1e293b; --muted:#64748b; --line:#dbe4ee; --bg:#f4f7fb;
+      --white:#ffffff; --soft:#eef6ff; --green:#059669; --amber:#d97706;
+      --shadow:0 18px 50px rgba(15,23,42,.09); --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+    a{color:inherit}
+    .container{width:min(1180px,calc(100% - 34px));margin:auto}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:850;letter-spacing:-.04em;font-size:1.35rem;color:var(--navy)}
+    .brand span{color:var(--sky)}
+    .navlinks{display:flex;gap:18px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{text-decoration:none;font-size:.9rem;font-weight:650;color:#475569}
+    .navlinks a:hover{color:var(--blue)}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0f172a 0%,#172554 45%,#0c4a6e 100%);color:white;padding:86px 0 76px}
+    .hero:after{content:"";position:absolute;width:440px;height:440px;border-radius:50%;right:-120px;top:-160px;background:rgba(56,189,248,.13);box-shadow:0 0 0 80px rgba(37,99,235,.06)}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.45fr .75fr;gap:52px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:.76rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#bae6fd}
+    h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.055em;margin:18px 0 20px;max-width:850px}
+    .hero p{font-size:1.08rem;color:#dbeafe;max-width:760px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid transparent;transition:.2s ease}
+    .btn.primary{background:#38bdf8;color:#082f49}.btn.primary:hover{transform:translateY(-2px);background:#7dd3fc}
+    .btn.ghost{border-color:rgba(255,255,255,.28);color:white;background:rgba(255,255,255,.06)}.btn.ghost:hover{background:rgba(255,255,255,.12)}
+    .hero-panel{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.22)}
+    .metric{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)}.metric:last-child{border-bottom:0}
+    .metric b{display:block;font-size:1.4rem;color:#7dd3fc}.metric span{font-size:.84rem;color:#cbd5e1}
+    main{padding:52px 0}
+    section{scroll-margin-top:92px;margin-bottom:46px}
+    .section-card{background:var(--white);border:1px solid #e5edf5;border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(24px,4vw,46px)}
+    .section-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:800;margin-bottom:8px}
+    h2{font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.15;letter-spacing:-.03em;color:var(--navy);margin-bottom:12px}
+    .lead{color:var(--muted);max-width:850px;margin-bottom:28px}
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .person{background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center}
+    .person img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 20%;border:5px solid white;outline:2px solid #bfdbfe;box-shadow:0 12px 26px rgba(15,23,42,.12);margin:0 auto 14px;display:block;background:#e2e8f0}
+    .person h3{font-size:1.05rem;color:var(--navy);margin-bottom:4px}.person p{font-size:.86rem;color:var(--muted)}
+    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .step{position:relative;background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:18px 14px;min-height:152px}
+    .step .num{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#dbeafe;color:#1d4ed8;font-weight:850;margin-bottom:12px}.step h3{font-size:.98rem;margin-bottom:5px;color:var(--navy)}.step p{font-size:.82rem;color:var(--muted)}
+    .topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .topic{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff}
+    .topic .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0369a1;background:#e0f2fe;border-radius:999px;padding:4px 9px;margin-bottom:10px}.topic h3{font-size:1.05rem;color:var(--navy);margin-bottom:6px}.topic p{font-size:.9rem;color:var(--muted)}
+    .apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .appcase{padding:18px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(145deg,#f8fbff,#fff)}
+    .appcase b{display:block;color:var(--navy);margin-bottom:6px}.appcase span{font-size:.85rem;color:var(--muted)}
+    .demo{background:linear-gradient(135deg,#eff6ff,#ecfeff);border:1px solid #bae6fd;border-radius:20px;padding:26px;display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center}
+    .demo h3{font-size:1.35rem;color:var(--navy);margin-bottom:8px}.demo p{color:#475569}.demo .btn{margin-top:14px;background:var(--blue);color:white}.demo .btn:hover{background:#1d4ed8;transform:translateY(-2px)}
+    .network{min-height:180px;border-radius:18px;background:#0f172a;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-around;padding:24px}
+    .layer{display:flex;flex-direction:column;gap:15px;z-index:2}.node{width:18px;height:18px;border-radius:50%;background:#38bdf8;box-shadow:0 0 18px rgba(56,189,248,.8)}.layer:nth-child(2) .node{background:#818cf8}.layer:nth-child(3) .node{background:#34d399}
+    .evaluation{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .eval{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.eval b{display:block;color:var(--blue);font-size:1.15rem;margin-bottom:5px}.eval span{font-size:.83rem;color:var(--muted)}
+    .ethics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.ethic{border-left:4px solid var(--cyan);background:#f8fafc;border-radius:12px;padding:18px}.ethic h3{font-size:1rem;color:var(--navy);margin-bottom:5px}.ethic p{font-size:.86rem;color:var(--muted)}
+    .resources{display:grid;grid-template-columns:1fr 1fr;gap:18px}.resource-card{border:1px solid var(--line);border-radius:18px;padding:20px}.resource-card h3{color:var(--navy);font-size:1.05rem;margin-bottom:9px}.resource-card a{color:var(--blue);font-weight:700;text-decoration:none}.resource-card a:hover{text-decoration:underline}
+    footer{background:#0f172a;color:#cbd5e1;margin-top:34px;padding:38px 0}.footer-grid{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-grid b{color:white}.footer-grid small{color:#94a3b8}
+    @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.apps-grid,.evaluation{grid-template-columns:repeat(2,1fr)}.demo{grid-template-columns:1fr}.ethics{grid-template-columns:1fr}.navlinks{display:none}}
+    @media(max-width:620px){.team-grid,.topic-grid,.apps-grid,.evaluation,.resources,.process{grid-template-columns:1fr}.hero{padding-top:58px}.person img{width:138px;height:138px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><nav>
+    <div class="brand">DataScience <span>Hub</span></div>
+    <ul class="navlinks">
+      <li><a href="#inicio">Inicio</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#ciclo">Ciclo analítico</a></li>
+      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#demo">Demo ANN</a></li><li><a href="#resultados">Evaluación</a></li>
+    </ul>
+  </nav></div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Ciencia de datos · Estadística · Inteligencia Artificial</span>
+      <h1>De los datos a decisiones inteligentes.</h1>
+      <p>Portal académico para integrar análisis exploratorio, modelado predictivo, redes neuronales y visualización interactiva. El objetivo es mostrar el proceso completo: comprender los datos, construir modelos, evaluar su desempeño y comunicar resultados útiles.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener">Abrir aplicación de Redes Neuronales ↗</a>
+        <a class="btn ghost" href="#tecnicas">Explorar contenidos</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Resumen del portal">
+      <div class="metric"><b>EDA</b><span>Exploración, calidad y comprensión de datos</span></div>
+      <div class="metric"><b>ML / ANN</b><span>Modelos predictivos y redes neuronales</span></div>
+      <div class="metric"><b>R + Shiny</b><span>Aplicaciones interactivas y reproducibles</span></div>
+      <div class="metric"><b>Evaluación</b><span>Métricas, validación e interpretación</span></div>
+    </aside>
+  </div>
+</section>
+
+<main class="container">
+  <section id="equipo" class="section-card">
+    <div class="section-label">01 · Equipo</div>
+    <h2>Equipo de desarrollo</h2>
+    <p class="lead">El proyecto es desarrollado por cuatro integrantes. Se incorporan las dos fotografías recibidas y se dejan dos espacios listos para reemplazar cuando tengan las fotos y nombres definitivos.</p>
+    <div class="team-grid">
+      <article class="person"><img src="assets/edwin.png" alt="Fotografía de Edwin Mejía"><h3>Edwin Mejía</h3><p>Modelado y ciencia de datos</p></article>
+      <article class="person"><img src="assets/glenda.png" alt="Fotografía de Glenda Blanc"><h3>Glenda Blanc</h3><p>Analítica estadística y visualización</p></article>
+      <article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente del integrante 3"><h3>Integrante 3</h3><p>Nombre y rol por completar</p></article>
+      <article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente del integrante 4"><h3>Integrante 4</h3><p>Nombre y rol por completar</p></article>
+    </div>
+  </section>
+
+  <section id="ciclo" class="section-card">
+    <div class="section-label">02 · Metodología</div>
+    <h2>Ciclo de Ciencia de Datos</h2>
+    <p class="lead">Esta sección le da a la página una secuencia lógica y evita presentar herramientas aisladas. El visitante puede entender cómo se llega desde una pregunta hasta una decisión basada en evidencia.</p>
+    <div class="process">
+      <article class="step"><div class="num">1</div><h3>Problema</h3><p>Definir la pregunta, objetivo analítico y variable de interés.</p></article>
+      <article class="step"><div class="num">2</div><h3>EDA</h3><p>Revisar calidad, distribuciones, faltantes, outliers y relaciones.</p></article>
+      <article class="step"><div class="num">3</div><h3>Preparación</h3><p>Transformar, codificar, escalar y seleccionar variables.</p></article>
+      <article class="step"><div class="num">4</div><h3>Modelado</h3><p>Entrenar modelos estadísticos, ML o redes neuronales.</p></article>
+      <article class="step"><div class="num">5</div><h3>Evaluación</h3><p>Validar desempeño, interpretar resultados y comunicar hallazgos.</p></article>
+    </div>
+  </section>
+
+  <section id="tecnicas" class="section-card">
+    <div class="section-label">03 · Contenidos propuestos</div>
+    <h2>Machine Learning, Deep Learning y analítica avanzada</h2>
+    <p class="lead">En lugar de limitar la página a “ML vs. DL”, conviene presentar un mapa de técnicas. Así se ve más académico y permite crecer con nuevos trabajos del grupo.</p>
+    <div class="topic-grid">
+      <article class="topic"><span class="tag">Supervisado</span><h3>Clasificación y predicción</h3><p>Regresión logística, árboles, Random Forest, XGBoost y otros modelos para predecir clases o resultados numéricos.</p></article>
+      <article class="topic"><span class="tag">No supervisado</span><h3>Segmentación y reducción de dimensión</h3><p>Clustering, componentes principales y técnicas para descubrir estructuras sin una etiqueta previa.</p></article>
+      <article class="topic"><span class="tag">Deep Learning</span><h3>Redes neuronales artificiales</h3><p>Arquitecturas feedforward, funciones de activación, optimización, regularización y criterios para evitar sobreajuste.</p></article>
+      <article class="topic"><span class="tag">Interpretabilidad</span><h3>Explicación de modelos</h3><p>Importancia de variables, sensibilidad y análisis de errores para que las predicciones sean entendibles y accionables.</p></article>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <div class="section-label">04 · Aplicaciones</div>
+    <h2>¿Dónde se pueden aplicar estos modelos?</h2>
+    <p class="lead">Agregar casos de uso hace que la página conecte la teoría con problemas reales y permite que cada integrante incorpore un ejemplo propio.</p>
+    <div class="apps-grid">
+      <div class="appcase"><b>Mantenimiento predictivo</b><span>Anticipar fallas de equipos a partir de variables operativas.</span></div>
+      <div class="appcase"><b>Riesgo y clasificación</b><span>Asignar niveles de riesgo o probabilidad de ocurrencia de un evento.</span></div>
+      <div class="appcase"><b>Segmentación</b><span>Identificar grupos con características similares para decisiones diferenciadas.</span></div>
+      <div class="appcase"><b>Pronóstico</b><span>Estimar demanda, ventas, producción u otros indicadores temporales.</span></div>
+    </div>
+  </section>
+
+  <section id="demo" class="section-card">
+    <div class="section-label">05 · Laboratorio interactivo</div>
+    <h2>Aplicaciones desarrolladas por el grupo</h2>
+    <div class="demo">
+      <div>
+        <h3>Redes Neuronales Artificiales — ANN</h3>
+        <p>Aplicación interactiva en R Shiny para explorar el comportamiento de una red neuronal y acercar el modelado a una experiencia práctica.</p>
+        <a class="btn" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener">Ingresar a la aplicación ANN ↗</a>
+      </div>
+      <div class="network" aria-label="Ilustración conceptual de una red neuronal">
+        <div class="layer"><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i></div>
+        <div class="layer"><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i></div>
+        <div class="layer"><i class="node"></i><i class="node"></i></div>
+      </div>
+    </div>
+    <div class="resources" style="margin-top:18px">
+      <div class="resource-card"><h3>Aplicación de Machine Learning</h3><p style="color:var(--muted);font-size:.9rem;margin-bottom:8px">Se conserva el recurso interactivo que ya estaba en la página original.</p><a href="https://0x1bir-fernando-mejia.shinyapps.io/app_ML/" target="_blank" rel="noopener">Abrir app de Machine Learning ↗</a></div>
+      <div class="resource-card"><h3>Sugerencia de crecimiento</h3><p style="color:var(--muted);font-size:.9rem">Cada nuevo trabajo del curso puede convertirse en una tarjeta: clustering, PCA, análisis discriminante, series de tiempo o dashboards.</p></div>
+    </div>
+  </section>
+
+  <section id="resultados" class="section-card">
+    <div class="section-label">06 · Evaluación de modelos</div>
+    <h2>No basta con predecir: hay que medir qué tan bien funciona</h2>
+    <p class="lead">Una sección específica de evaluación da mayor rigor al portal y permite mostrar resultados de cada aplicación sin confundirlos con la explicación teórica.</p>
+    <div class="evaluation">
+      <div class="eval"><b>Accuracy</b><span>Proporción total de predicciones correctas.</span></div>
+      <div class="eval"><b>Precision / Recall</b><span>Calidad de la clase positiva y capacidad para recuperarla.</span></div>
+      <div class="eval"><b>F1-score</b><span>Balance entre precision y recall cuando importa el equilibrio.</span></div>
+      <div class="eval"><b>ROC / AUC</b><span>Capacidad de discriminación del modelo a distintos umbrales.</span></div>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <div class="section-label">07 · Calidad y responsabilidad</div>
+    <h2>IA responsable y reproducibilidad</h2>
+    <p class="lead">Este tema diferencia una página académica de una simple colección de demos: reconoce que el desempeño técnico debe acompañarse de calidad de datos, trazabilidad y uso responsable.</p>
+    <div class="ethics">
+      <article class="ethic"><h3>Calidad de datos</h3><p>Revisar faltantes, sesgos, valores extremos, errores de captura y coherencia antes del modelado.</p></article>
+      <article class="ethic"><h3>Reproducibilidad</h3><p>Documentar transformaciones, particiones de datos, parámetros, semillas y versiones del código.</p></article>
+      <article class="ethic"><h3>Interpretación y ética</h3><p>Evitar decisiones automáticas sin contexto, revisar sesgos y comunicar las limitaciones del modelo.</p></article>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <div class="section-label">08 · Recursos</div>
+    <h2>Tecnologías y documentación</h2>
+    <div class="resources">
+      <div class="resource-card"><h3>R y Shiny</h3><p style="color:var(--muted);font-size:.9rem">Entorno para análisis estadístico y construcción de aplicaciones web interactivas.</p><a href="https://shiny.posit.co/" target="_blank" rel="noopener">Documentación de Shiny ↗</a></div>
+      <div class="resource-card"><h3>Machine Learning</h3><p style="color:var(--muted);font-size:.9rem">Referencias para modelos, validación y preprocesamiento.</p><a href="https://scikit-learn.org/" target="_blank" rel="noopener">Scikit-learn ↗</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><b>DataScience Hub</b><br><small>Proyecto académico · Ciencia de Datos e Inteligencia Artificial</small></div>
+    <small>© 2026 · Sitio preparado para GitHub Pages</small>
+  </div>
+</footer>
+</body>
+</html>
