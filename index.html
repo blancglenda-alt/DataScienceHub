@@ -75,7 +75,7 @@
     <div class="brand">DataScience <span>Hub</span></div>
     <ul class="navlinks">
       <li><a href="#inicio">Inicio</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#ciclo">Ciclo analítico</a></li>
-      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#demo">Demo ANN</a></li><li><a href="#resultados">Evaluación</a></li>
+      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#demo">Demo ANN</a></li><li><a href="#cardiopredict">CardioPredict AI</a></li><li><a href="#resultados">Evaluación</a></li>
     </ul>
   </nav></div>
 </header>
@@ -106,10 +106,10 @@
     <h2>Equipo de desarrollo</h2>
     <p class="lead">El proyecto es desarrollado por cuatro integrantes. Se incorporan las dos fotografías recibidas y se dejan dos espacios listos para reemplazar cuando tengan las fotos y nombres definitivos.</p>
     <div class="team-grid">
-<article class="person"><img src="assets/edwin.png" alt="Fotografía de Ricardo Castañeda"><h3>Ricardo Castañeda</h3><p>Modelado y ciencia de datos</p></article>
-<article class="person"><img src="assets/Glenda2.png" alt="Fotografía de Glenda Blanc"><h3>Glenda Blanc</h3><p>Analítica estadística y visualización</p></article>
-<article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente de Estafania Paucar"><h3>Estafania Paucar</h3><p>Foto pendiente</p></article>
-<article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente de Jimmy Montoya"><h3>Jimmy Montoya</h3><p>Foto pendiente</p></article>
+      <article class="person"><img src="assets/edwin.png" alt="Fotografía de Edwin Mejía"><h3>Edwin Mejía</h3><p>Modelado y ciencia de datos</p></article>
+      <article class="person"><img src="assets/glenda.png" alt="Fotografía de Glenda Blanc"><h3>Glenda Blanc</h3><p>Analítica estadística y visualización</p></article>
+      <article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente del integrante 3"><h3>Integrante 3</h3><p>Nombre y rol por completar</p></article>
+      <article class="person"><img src="assets/placeholder.svg" alt="Foto pendiente del integrante 4"><h3>Integrante 4</h3><p>Nombre y rol por completar</p></article>
     </div>
   </section>
 
@@ -171,8 +171,34 @@
     </div>
   </section>
 
+  <section id="cardiopredict" class="section-card">
+    <div class="section-label">06 · Proyecto de Deep Learning</div>
+    <h2>CardioPredict AI — Deep Learning Clínico</h2>
+    <p class="lead">Proyecto académico en R Shiny para explorar la clasificación de eventos cardiovasculares a cinco años. El prototipo integra análisis descriptivo, entrenamiento, evaluación y predicción individual o por lotes.</p>
+    <div class="topic-grid">
+      <article class="topic"><span class="tag">Base del ejercicio</span><h3>1.200 pacientes · 6% con evento</h3><p>Variables predictoras: edad, síntomas, frecuencia cardíaca promedio (FC) y variabilidad de la frecuencia cardíaca (VFC). La baja frecuencia de eventos exige analizar sensibilidad, precisión y falsos negativos.</p></article>
+      <article class="topic"><span class="tag">Metodología</span><h3>Partición 80/20 con validación interna</h3><p>770 registros para ajustar los pesos, 191 para validación y 239 para prueba, en la ejecución compartida. Estandarización basada únicamente en el conjunto de entrenamiento.</p></article>
+      <article class="topic"><span class="tag">Entrenamiento automático</span><h3>Cinco modelos con un botón</h3><p>MLP, SimpleRNN, LSTM, GRU y CNN 1D. La aplicación compara sus métricas de validación. Las redes recurrentes y convolucionales son experimentales sobre datos tabulares, no sobre series cardíacas reales.</p></article>
+      <article class="topic"><span class="tag">Resultados de validación</span><h3>Desempeño según la métrica</h3><p>CNN 1D registró el mayor F1 macro (0,5379); LSTM, el AUC más alto (0,6919); y MLP, el menor LogLoss (0,5304). Son resultados de validación, no de prueba externa.</p></article>
+    </div>
+    <div class="demo" style="margin-top:20px">
+      <div>
+        <h3>Explorar CardioPredict AI</h3>
+        <p>Abre el laboratorio interactivo CardioPredict AI para explorar datos, entrenar y comparar cinco modelos y realizar predicciones de carácter académico.</p>
+        <a class="btn" href="https://gblanc2025.shinyapps.io/CardioPredict_v2/" target="_blank" rel="noopener noreferrer">Abrir CardioPredict AI ↗</a>
+      </div>
+      <div class="network" aria-label="Cinco arquitecturas: MLP, SimpleRNN, LSTM, GRU y CNN 1D" style="display:flex;flex-direction:column;gap:12px;color:#fff;text-align:center">
+        <strong style="font-size:1.25rem;color:#7dd3fc">5 arquitecturas</strong>
+        <span>MLP · SimpleRNN · LSTM</span>
+        <span>GRU · CNN 1D</span>
+        <small style="color:#cbd5e1">Entrenamiento y comparación desde un botón</small>
+      </div>
+    </div>
+    <p style="margin-top:14px;color:var(--muted);font-size:.84rem">Uso exclusivamente académico y exploratorio. No es una herramienta de diagnóstico ni cuenta con validación clínica externa.</p>
+  </section>
+
   <section id="resultados" class="section-card">
-    <div class="section-label">06 · Evaluación de modelos</div>
+    <div class="section-label">07 · Evaluación de modelos</div>
     <h2>No basta con predecir: hay que medir qué tan bien funciona</h2>
     <p class="lead">Una sección específica de evaluación da mayor rigor al portal y permite mostrar resultados de cada aplicación sin confundirlos con la explicación teórica.</p>
     <div class="evaluation">
@@ -184,7 +210,7 @@
   </section>
 
   <section class="section-card">
-    <div class="section-label">07 · Calidad y responsabilidad</div>
+    <div class="section-label">08 · Calidad y responsabilidad</div>
     <h2>IA responsable y reproducibilidad</h2>
     <p class="lead">Este tema diferencia una página académica de una simple colección de demos: reconoce que el desempeño técnico debe acompañarse de calidad de datos, trazabilidad y uso responsable.</p>
     <div class="ethics">
@@ -195,7 +221,7 @@
   </section>
 
   <section class="section-card">
-    <div class="section-label">08 · Recursos</div>
+    <div class="section-label">09 · Recursos</div>
     <h2>Tecnologías y documentación</h2>
     <div class="resources">
       <div class="resource-card"><h3>R y Shiny</h3><p style="color:var(--muted);font-size:.9rem">Entorno para análisis estadístico y construcción de aplicaciones web interactivas.</p><a href="https://shiny.posit.co/" target="_blank" rel="noopener">Documentación de Shiny ↗</a></div>
