@@ -119,6 +119,20 @@
     .tech-card{border:1px solid var(--line);border-radius:16px;padding:19px;background:#fff}.tech-card h3{color:var(--navy);font-size:1.05rem;margin-bottom:8px}.tech-card p{color:var(--muted);font-size:.86rem;margin-bottom:10px}.tech-card a{font-weight:750;color:#2563eb;text-decoration:none}
     @media(max-width:900px){.project-jump,.context-grid,.tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.infographic-layout,.simulator-layout{grid-template-columns:1fr}.simulator-frame{height:900px}}
     @media(max-width:620px){.project-jump,.context-grid,.tech-grid,.path-timeline,.media-grid,.reel-area{grid-template-columns:1fr}.project-header{align-items:flex-start}.project-number{width:50px;height:50px}.project-intro{padding:22px}.simulator-frame{height:1080px}.reel-screen{max-width:360px;margin:auto}.button-row{flex-direction:column}.button-row .btn{width:100%}}
+    /* Guía didáctica y lectura del simulador */
+    .simulator-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 24px}
+    .guide-card{border:1px solid var(--line);background:linear-gradient(145deg,#f8fbff,#fff);border-radius:16px;padding:20px}
+    .guide-index{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:9px;padding:3px 9px;font-size:.77rem;font-weight:850;margin-bottom:12px}
+    .guide-card h4,.interpret-grid h4{color:var(--navy);font-size:1rem;margin-bottom:8px}
+    .guide-card p,.interpret-grid p{color:#475569;font-size:.9rem;line-height:1.65}
+    .simulator-view{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;margin:22px 0}
+    .simulator-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;background:#f8fafc;border-bottom:1px solid var(--line)}
+    .simulator-toolbar strong{color:var(--navy)}.simulator-toolbar p{color:var(--muted);font-size:.84rem}
+    .simulator-frame-large{border:0;border-radius:0;height:1050px}
+    .interpret-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:18px 0}
+    .interpret-grid article{background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:17px}
+    @media(max-width:850px){.simulator-guide-grid{grid-template-columns:1fr}.simulator-frame-large{height:1200px}}
+    @media(max-width:620px){.interpret-grid{grid-template-columns:1fr}.simulator-toolbar{flex-direction:column;align-items:stretch}.simulator-frame-large{height:1300px}}
   </style>
 </head>
 <body>
@@ -127,7 +141,7 @@
     <div class="brand">DataScience <span>Hub</span></div>
     <ul class="navlinks">
       <li><a href="#inicio">Inicio</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#ciclo">Ciclo analítico</a></li>
-      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#proyecto-industrial">Proyecto 1 · Industrial</a></li><li><a href="#cardiopredict">Proyecto 2 · CardioPredict</a></li><li><a href="#tecnologias">Proyecto 3 · Recursos</a></li>
+      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#proyecto-industrial">Proyecto 1 · Industrial</a></li><li><a href="#cardiopredict">Proyecto 2 · CardioPredict</a></li><li><a href="#energia-industrial">Proyecto 3 · Energía</a></li>
     </ul>
   </nav></div>
 </header>
@@ -198,7 +212,7 @@
     <div class="project-jump">
       <a href="#proyecto-industrial">01 · Mantenimiento predictivo <small>Machine Learning clásico vs. Deep Learning · webinar</small></a>
       <a href="#cardiopredict">02 · CardioPredict AI <small>Deep Learning clínico · laboratorio académico</small></a>
-      <a href="#tecnologias">03 · Prediciones de consumo de energía de industrias <small>Deep Learning · webinar</small></a>
+      <a href="#energia-industrial">03 · Predicción del consumo energético en industrias <small>Deep Learning · webinar</small></a>
     </div>
   </section>
 
@@ -253,12 +267,25 @@
 
     <div class="subsection" id="simulador">
       <div class="section-label">Etapa 03 · Experimenta</div>
-      <h3>Simuladores: aprende cambiando parámetros</h3>
-      <p class="sublead">Primero experimenta con el simulador MLP integrado. Después, accede al segundo laboratorio para ampliar la exploración de redes neuronales.</p>
-      <div class="simulator-layout">
-        <div><iframe class="simulator-frame" src="simulador-red-neuronal.html" title="Laboratorio interactivo de redes feedforward MLP" loading="lazy"></iframe><div class="button-row"><a class="btn blue-outline" href="simulador-red-neuronal.html" target="_blank" rel="noopener noreferrer">Simulador MLP en pantalla completa ↗</a></div></div>
-        <aside class="simulator-help"><h4>Práctica guiada: MLP</h4><ol><li>Selecciona un problema de clasificación (por ejemplo, XOR).</li><li>Entrena la red con una configuración inicial.</li><li>Modifica capas, neuronas o tasa de aprendizaje.</li><li>Compara la pérdida y el desempeño de validación.</li><li>Explica si aumentar la complejidad mejoró realmente el modelo.</li></ol><div class="note" style="margin-top:0">El simulador integrado usa datos sintéticos y sirve para comprender una MLP; no implementa CNN ni RNN.</div><div class="button-row"><a class="btn blue-outline" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener noreferrer">Ir a otro simulador ANN ↗</a></div><p style="margin-top:13px">Laboratorio adicional publicado en R Shiny.</p></aside>
+      <h3>Laboratorio interactivo: observa cómo aprende una red neuronal</h3>
+      <p class="sublead">Este simulador permite experimentar con una red multicapa (MLP) que aprende a clasificar puntos en dos categorías. No es un modelo industrial: su propósito es entender visualmente el entrenamiento y la generalización antes de utilizar una aplicación de mantenimiento predictivo.</p>
+      <div class="simulator-guide-grid">
+        <article class="guide-card"><span class="guide-index">01</span><h4>Configura la red</h4><p>Elige un patrón de datos, por ejemplo XOR; define capas ocultas, neuronas, activación y tasa de aprendizaje. Estas opciones modifican la capacidad y la forma de aprender del modelo.</p></article>
+        <article class="guide-card"><span class="guide-index">02</span><h4>Entrena y observa</h4><p>Presiona <strong>Entrenar</strong> y revisa la evolución de las épocas, la pérdida y la exactitud de validación. Con <strong>+ 1 época</strong> avanzas paso a paso; con <strong>Reiniciar</strong> comienzas un nuevo experimento.</p></article>
+        <article class="guide-card"><span class="guide-index">03</span><h4>Interpreta el aprendizaje</h4><p>En <strong>Arquitectura y pesos</strong> ves conexiones entre neuronas; en <strong>Frontera de decisión</strong> ves cómo se separan las clases; y en <strong>Curva de aprendizaje</strong> comparas el error de entrenamiento y validación.</p></article>
       </div>
+      <div class="simulator-view">
+        <div class="simulator-toolbar"><div><strong>Simulador MLP · Laboratorio práctico</strong><p>Modifica un parámetro a la vez para identificar qué efecto tiene sobre el aprendizaje.</p></div><a class="btn blue-outline" href="simulador-red-neuronal.html" target="_blank" rel="noopener noreferrer">Abrir en pantalla completa ↗</a></div>
+        <iframe id="simulador-mlp" class="simulator-frame simulator-frame-large" src="simulador-red-neuronal.html" title="Laboratorio interactivo MLP: arquitectura, frontera de decisión y curva de aprendizaje" loading="lazy"></iframe>
+      </div>
+      <div class="interpret-grid">
+        <article><h4>Épocas</h4><p>Es la cantidad de recorridos de entrenamiento completados. Más épocas no garantizan mejor predicción.</p></article>
+        <article><h4>Pérdida (loss)</h4><p>Resume el error que intenta minimizar la red. Una disminución suele indicar mejor ajuste sobre los datos utilizados.</p></article>
+        <article><h4>Exactitud de validación</h4><p>Porcentaje de observaciones de validación clasificadas correctamente; sirve para comprobar el desempeño fuera de los datos de entrenamiento.</p></article>
+        <article><h4>Curvas de aprendizaje</h4><p>Si el error de entrenamiento sigue bajando, pero el de validación deja de mejorar o sube, puede existir sobreajuste.</p></article>
+      </div>
+      <div class="note"><strong>Ejercicio para la audiencia:</strong> selecciona XOR y entrena. Registra la exactitud de validación; luego modifica solamente el número de neuronas y vuelve a entrenar. Compara los resultados y argumenta si la red más compleja realmente generaliza mejor. Los resultados dependen de la inicialización y de los datos generados.</div>
+      <div class="button-row"><a class="btn blue-outline" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener noreferrer">Explorar otro laboratorio de redes neuronales ↗</a></div>
     </div>
 
     <div class="subsection" id="software-shiny">
@@ -285,9 +312,16 @@
   </section>
 
   <!-- PROYECTO 3 -->
-  <section class="section-card" id="tecnologias">
-    <div class="project-header"><div class="project-number">03</div><div><div class="section-label">Proyecto 3 · Recursos de apoyo</div><h2 class="project-title">Prediccion de consumo energetico de industrias de alto consumo</h2></div></div>
-    <p class="project-lead">Herramientas empleadas para construir aplicaciones y recursos de consulta para comprender, evaluar y comunicar modelos de Ciencia de Datos e Inteligencia Artificial.</p>
+  <section class="section-card" id="energia-industrial">
+    <div class="project-header"><div class="project-number">03</div><div><div class="section-label">Proyecto 3 · Aplicación industrial</div><h2 class="project-title">Predicción del consumo energético en industrias de alto consumo</h2></div></div>
+    <p class="project-lead">Proyecto orientado a estudiar y predecir la demanda energética de industrias con consumos elevados. El problema consiste en anticipar necesidades de energía para apoyar la planificación operativa, detectar desviaciones y evaluar oportunidades de eficiencia.</p>
+    <div class="context-grid">
+      <article class="context-card"><strong>Problema analítico</strong><p>El consumo energético puede variar según el nivel de producción, los turnos, los procesos y las condiciones de operación. Una estimación imprecisa dificulta planificar recursos y costos.</p></article>
+      <article class="context-card"><strong>Enfoque de modelado</strong><p>Explorar series históricas de consumo y variables operativas, comparar modelos predictivos apropiados y respetar el orden temporal de los datos en la validación.</p></article>
+      <article class="context-card"><strong>Resultados por estudiar</strong><p>Analizar el error de predicción mediante MAE, RMSE o métricas pertinentes y considerar su utilidad para la gestión energética. No se presentan resultados numéricos sin evidencia.</p></article>
+    </div>
+    <div class="note"><strong>Alcance:</strong> este apartado presenta el planteamiento del proyecto. Se incorporarán la base de datos, la metodología específica, las métricas y el enlace a su aplicación cuando estén disponibles.</div>
+    <div class="subsection"><h3>Tecnologías y documentación de apoyo</h3><p class="sublead">Recursos metodológicos transversales utilizados en los proyectos del portal.</p></div>
     <div class="tech-grid">
       <article class="tech-card"><h3>R y Shiny</h3><p>Programación estadística, interfaces interactivas, visualización y despliegue de aplicaciones.</p><a href="https://shiny.posit.co/" target="_blank" rel="noopener noreferrer">Documentación oficial de Shiny ↗</a></article>
       <article class="tech-card"><h3>Deep Learning · Keras</h3><p>Construcción, entrenamiento y evaluación de redes neuronales desde R y Python.</p><a href="https://keras3.posit.co/" target="_blank" rel="noopener noreferrer">Keras para R ↗</a></article>
@@ -300,5 +334,25 @@
   </section>
 </main>
 <footer><div class="container footer-grid"><div><b>DataScience Hub</b><br><small>Grupo 3 · Maestría en Estadística · Ciencia de Datos e Inteligencia Artificial</small></div><small>© 2026 · Portal académico para GitHub Pages</small></div></footer>
+<script>
+/* Oculta únicamente el bloque de instrucciones para incrustar el simulador
+   cuando este se muestra dentro del portal (ambos archivos comparten origen). */
+(function(){
+  const iframe=document.getElementById('simulador-mlp');
+  if(!iframe) return;
+  iframe.addEventListener('load',function(){
+    try{
+      const doc=iframe.contentDocument;
+      if(!doc) return;
+      const headings=[...doc.querySelectorAll('summary,h2,h3,h4')];
+      for(const heading of headings){
+        if(!/c[oó]mo incluir este simulador en tu web/i.test(heading.textContent||'')) continue;
+        const block=heading.closest('details')||heading.closest('section')||heading.closest('article')||heading.parentElement;
+        if(block && block!==doc.body && block!==doc.documentElement) block.style.display='none';
+      }
+    }catch(err){/* El contenido externo puede impedir el acceso al iframe. */}
+  });
+})();
+</script>
 </body>
 </html>
