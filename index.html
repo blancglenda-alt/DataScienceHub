@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portal académico de Ciencia de Datos, Machine Learning, Deep Learning y aplicaciones interactivas desarrolladas en R Shiny.">
-  <title>DataScience Hub | Analítica, Machine Learning e IA</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Portal académico de Ciencia de Datos, Machine Learning, Deep Learning y aplicaciones interactivas desarrolladas en R Shiny." name="description"/>
+<title>DataScience Hub | Analítica, Machine Learning e IA</title>
+<style>
     :root{
       --navy:#0f172a; --blue:#2563eb; --sky:#0ea5e9; --cyan:#06b6d4;
       --ink:#1e293b; --muted:#64748b; --line:#dbe4ee; --bg:#f4f7fb;
@@ -133,207 +134,255 @@
     .interpret-grid article{background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:17px}
     @media(max-width:850px){.simulator-guide-grid{grid-template-columns:1fr}.simulator-frame-large{height:1200px}}
     @media(max-width:620px){.interpret-grid{grid-template-columns:1fr}.simulator-toolbar{flex-direction:column;align-items:stretch}.simulator-frame-large{height:1300px}}
-  </style>
+  
+/* Profundización del caso industrial: etapa 04 */
+.industrial-story{display:grid;grid-template-columns:1.4fr .8fr;gap:18px;align-items:stretch;margin:20px 0 24px}
+.industrial-story .story-main{padding:25px;border:1px solid #bfdbfe;border-radius:18px;background:linear-gradient(135deg,#eff6ff,#f8fbff)}
+.industrial-story .story-main h4{font-size:1.15rem;color:#0f172a;margin-bottom:11px}
+.industrial-story p{color:#475569;margin:0 0 12px;line-height:1.7}
+.industrial-story .story-main p:last-child{margin-bottom:0}
+.industrial-story .story-aside{border-radius:18px;padding:23px;background:#0f172a;color:#fff}
+.industrial-story .story-aside h4{color:#7dd3fc;font-size:1.05rem;margin-bottom:13px}
+.industrial-story .story-aside p{color:#e2e8f0;font-size:.91rem}
+.variable-pills{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 0}
+.variable-pills span{padding:7px 12px;border-radius:999px;background:#e0f2fe;border:1px solid #bae6fd;font-size:.82rem;font-weight:700;color:#075985}
+.model-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:16px 0 24px}
+.model-panel{padding:22px;border-radius:17px;border:1px solid #dbe4ee;background:#fff}
+.model-panel h4{font-size:1.07rem;color:#0f172a;margin-bottom:9px}
+.model-panel p{font-size:.89rem;color:#475569;margin-bottom:12px}
+.model-panel ul{padding-left:20px;color:#334155;font-size:.89rem;line-height:1.8}
+.model-panel .model-tag{display:inline-block;margin-bottom:10px;padding:4px 10px;background:#dbeafe;color:#1e40af;border-radius:20px;font-weight:800;font-size:.76rem}
+.research-questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:14px 0 24px;counter-reset:research}
+.research-questions li{list-style:none;counter-increment:research;position:relative;padding:15px 16px 15px 49px;border-radius:13px;background:#f8fafc;border:1px solid #dbe4ee;color:#334155;font-size:.91rem;line-height:1.55}
+.research-questions li:before{content:counter(research,decimal-leading-zero);position:absolute;left:13px;top:14px;color:#2563eb;font-size:.79rem;font-weight:850}
+.decision-criteria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 20px}
+.decision-criteria article{padding:17px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px}
+.decision-criteria strong{display:block;color:#075985;margin-bottom:6px}
+.decision-criteria p{font-size:.85rem;color:#475569}
+.project-action .action-caption{color:#bae6fd;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem;font-weight:800;margin-bottom:8px}
+@media(max-width:850px){.industrial-story,.model-compare,.research-questions{grid-template-columns:1fr}.decision-criteria{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header>
-  <div class="container"><nav>
-    <div class="brand">DataScience <span>Hub</span></div>
-    <ul class="navlinks">
-      <li><a href="#inicio">Inicio</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#ciclo">Ciclo analítico</a></li>
-      <li><a href="#tecnicas">IA & modelos</a></li><li><a href="#proyecto-industrial">Proyecto 1 · Industrial</a></li><li><a href="#cardiopredict">Proyecto 2 · CardioPredict</a></li><li><a href="#energia-industrial">Proyecto 3 · Energía</a></li>
-    </ul>
-  </nav></div>
+<div class="container"><nav>
+<div class="brand">DataScience <span>Hub</span></div>
+<ul class="navlinks">
+<li><a href="#inicio">Inicio</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#ciclo">Ciclo analítico</a></li>
+<li><a href="#tecnicas">IA &amp; modelos</a></li><li><a href="#proyecto-industrial">Proyecto 1 · Industrial</a></li><li><a href="#cardiopredict">Proyecto 2 · CardioPredict</a></li><li><a href="#energia-industrial">Proyecto 3 · Energía</a></li>
+</ul>
+</nav></div>
 </header>
-
 <section class="hero" id="inicio">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">Ciencia de datos · Estadística · Inteligencia Artificial</span>
-      <h1>De los datos a decisiones inteligentes.</h1>
-      <p>Portal académico para integrar análisis exploratorio, modelado predictivo, redes neuronales y visualización interactiva. El objetivo es mostrar el proceso completo: comprender los datos, construir modelos, evaluar su desempeño y comunicar resultados útiles.</p>
-      <div class="cta">
-        <a class="btn primary" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener">Abrir aplicación de Redes Neuronales ↗</a>
-        <a class="btn ghost" href="#proyecto-industrial">Explorar proyectos</a>
-      </div>
-    </div>
-    <aside class="hero-panel" aria-label="Resumen del portal">
-      <div class="metric"><b>EDA</b><span>Exploración, calidad y comprensión de datos</span></div>
-      <div class="metric"><b>ML / ANN</b><span>Modelos predictivos y redes neuronales</span></div>
-      <div class="metric"><b>R + Shiny</b><span>Aplicaciones interactivas y reproducibles</span></div>
-      <div class="metric"><b>Evaluación</b><span>Métricas, validación e interpretación</span></div>
-    </aside>
-  </div>
+<div class="container hero-grid">
+<div>
+<span class="eyebrow">Ciencia de datos · Estadística · Inteligencia Artificial</span>
+<h1>De los datos a decisiones inteligentes.</h1>
+<p>Portal académico para integrar análisis exploratorio, modelado predictivo, redes neuronales y visualización interactiva. El objetivo es mostrar el proceso completo: comprender los datos, construir modelos, evaluar su desempeño y comunicar resultados útiles.</p>
+<div class="cta">
+<a class="btn primary" href="https://gblanc2025.shinyapps.io/app_ANNs/" rel="noopener" target="_blank">Abrir aplicación de Redes Neuronales ↗</a>
+<a class="btn ghost" href="#proyecto-industrial">Explorar proyectos</a>
+</div>
+</div>
+<aside aria-label="Resumen del portal" class="hero-panel">
+<div class="metric"><b>EDA</b><span>Exploración, calidad y comprensión de datos</span></div>
+<div class="metric"><b>ML / ANN</b><span>Modelos predictivos y redes neuronales</span></div>
+<div class="metric"><b>R + Shiny</b><span>Aplicaciones interactivas y reproducibles</span></div>
+<div class="metric"><b>Evaluación</b><span>Métricas, validación e interpretación</span></div>
+</aside>
+</div>
 </section>
-
 <main class="container">
-  <section id="equipo" class="section-card">
-    <div class="section-label">01 · Equipo</div>
-    <h2>Equipo de desarrollo</h2>
-    <p class="lead">Equipo académico del Grupo 3 de la Maestría en Estadística, mención Ciencia de Datos e Inteligencia Artificial.</p>
-    <div class="team-grid">
-      <article class="person"><img src="assets/Ricardo.png" alt="Fotografía de Ricardo Castanneda"><h3>Ricardo Castanneda</h3><p>Grupo 3</p></article>
-      <article class="person"><img src="assets/Glenda2.png" alt="Fotografía de Glenda Blanc"><h3>Glenda Blanc</h3><p>Grupo 3</p></article>
-      <article class="person"><img src="assets/Estefania.png" alt="Fotografía de Estefania Paucar"><h3>Estefania Paucar</h3><p>Grupo 3</p></article>
-      <article class="person"><img src="assets/Jimmy.png" alt="Fotografía de Jimmy Montoya"><h3>Jimmy Montoya</h3><p>Grupo 3</p></article>
-    </div>
-  </section>
-
-  <section id="ciclo" class="section-card">
-    <div class="section-label">02 · Metodología</div>
-    <h2>Ciclo de Ciencia de Datos</h2>
-    <p class="lead">Esta sección le da a la página una secuencia lógica y evita presentar herramientas aisladas. El visitante puede entender cómo se llega desde una pregunta hasta una decisión basada en evidencia.</p>
-    <div class="process">
-      <article class="step"><div class="num">1</div><h3>Problema</h3><p>Definir la pregunta, objetivo analítico y variable de interés.</p></article>
-      <article class="step"><div class="num">2</div><h3>EDA</h3><p>Revisar calidad, distribuciones, faltantes, outliers y relaciones.</p></article>
-      <article class="step"><div class="num">3</div><h3>Preparación</h3><p>Transformar, codificar, escalar y seleccionar variables.</p></article>
-      <article class="step"><div class="num">4</div><h3>Modelado</h3><p>Entrenar modelos estadísticos, ML o redes neuronales.</p></article>
-      <article class="step"><div class="num">5</div><h3>Evaluación</h3><p>Validar desempeño, interpretar resultados y comunicar hallazgos.</p></article>
-    </div>
-  </section>
-
-  <section id="tecnicas" class="section-card">
-    <div class="section-label">03 · Contenidos propuestos</div>
-    <h2>Machine Learning, Deep Learning y analítica avanzada</h2>
-    <p class="lead">En lugar de limitar la página a “ML vs. DL”, conviene presentar un mapa de técnicas. Así se ve más académico y permite crecer con nuevos trabajos del grupo.</p>
-    <div class="topic-grid">
-      <article class="topic"><span class="tag">Supervisado</span><h3>Clasificación y predicción</h3><p>Regresión logística, árboles, Random Forest, XGBoost y otros modelos para predecir clases o resultados numéricos.</p></article>
-      <article class="topic"><span class="tag">No supervisado</span><h3>Segmentación y reducción de dimensión</h3><p>Clustering, componentes principales y técnicas para descubrir estructuras sin una etiqueta previa.</p></article>
-      <article class="topic"><span class="tag">Deep Learning</span><h3>Redes neuronales artificiales</h3><p>Arquitecturas feedforward, funciones de activación, optimización, regularización y criterios para evitar sobreajuste.</p></article>
-      <article class="topic"><span class="tag">Interpretabilidad</span><h3>Explicación de modelos</h3><p>Importancia de variables, sensibilidad y análisis de errores para que las predicciones sean entendibles y accionables.</p></article>
-    </div>
-  </section>
-
-  <!-- 04 · PROYECTOS DE APLICACIÓN -->
-  <section class="project-intro" id="aplicaciones">
-    <div class="section-label">04 · Aplicaciones · Portafolio del webinar</div>
-    <h2>Tres proyectos, de la comprensión a la aplicación</h2>
-    <p>Una ruta académica para explicar las arquitecturas de inteligencia artificial, experimentar con sus decisiones y aplicar modelos en problemas industriales y clínicos. El portal reúne aprendizaje guiado, simuladores, aplicaciones Shiny y documentación.</p>
-    <div class="project-jump">
-      <a href="#proyecto-industrial">01 · Mantenimiento predictivo <small>Machine Learning clásico vs. Deep Learning · webinar</small></a>
-      <a href="#cardiopredict">02 · CardioPredict AI <small>Deep Learning clínico · laboratorio académico</small></a>
-      <a href="#energia-industrial">03 · Predicción del consumo energético en industrias <small>Deep Learning · webinar</small></a>
-    </div>
-  </section>
-
-  <!-- PROYECTO 1 -->
-  <section class="section-card" id="proyecto-industrial">
-    <div class="project-header"><div class="project-number">01</div><div><div class="section-label">Proyecto 1 · Caso central del webinar</div><h2 class="project-title">Machine Learning clásico vs. Deep Learning en mantenimiento predictivo</h2></div></div>
-    <p class="project-lead">¿Podemos anticipar una posible falla en un equipo industrial antes de que provoque una parada no planificada? Este proyecto plantea una comparación de modelos para apoyar decisiones de mantenimiento a partir de variables operativas y, cuando están disponibles, señales de sensores.</p>
-    <div class="context-grid">
-      <article class="context-card"><strong>El problema</strong><p>Las fallas inesperadas generan interrupciones operativas, reparaciones urgentes y posibles riesgos de seguridad. El mantenimiento reactivo actúa después del evento.</p></article>
-      <article class="context-card"><strong>La propuesta</strong><p>Usar datos de funcionamiento para identificar patrones asociados a fallas y comparar enfoques tradicionales de Machine Learning con redes neuronales.</p></article>
-      <article class="context-card"><strong>La decisión</strong><p>Comparar desempeño y errores —en especial las fallas no detectadas— antes de elegir un modelo. Las predicciones orientan el análisis, no sustituyen la inspección técnica.</p></article>
-    </div>
-
-    <div class="subsection" id="videos-software">
-      <div class="section-label">Ruta de aprendizaje · Recursos digitales</div>
-      <h3>Aprender, observar, experimentar y aplicar</h3>
-      <p class="sublead">La exposición sigue cuatro momentos didácticos. Cada recurso prepara al visitante para comprender el experimento final en R Shiny.</p>
-      <div class="path-timeline">
-        <a href="#infografia">01 · Comprende <span>Infografía comparativa de arquitecturas</span></a>
-        <a href="#videos-aprendizaje">02 · Observa <span>Videos y reel audiovisual</span></a>
-        <a href="#simulador">03 · Experimenta <span>Laboratorio interactivo MLP</span></a>
-        <a href="#software-shiny">04 · Aplica <span>Problema industrial y aplicación Shiny</span></a>
-      </div>
-    </div>
-
-    <div class="subsection" id="infografia">
-      <div class="section-label">Etapa 01 · Comprende</div>
-      <h3>Infografía: tres formas de aprender</h3>
-      <p class="sublead">La imagen resume la estructura, el funcionamiento y los hiperparámetros de redes multicapa (MLP), convolucionales (CNN) y recurrentes (RNN).</p>
-      <div class="infographic-layout">
-        <figure><a href="assets/infografia-redes-neuronales.png" target="_blank" rel="noopener" aria-label="Ver infografía ampliada"><img src="assets/infografia-redes-neuronales.png" alt="Infografía Tres formas de aprender: redes multicapa MLP, convolucional CNN y recurrente RNN" loading="lazy"></a><figcaption>Haz clic en la infografía para verla en tamaño completo.</figcaption></figure>
-        <aside class="aside-note"><h4>¿Qué debemos identificar?</h4><ul><li><strong>MLP:</strong> aprende relaciones no lineales entre variables tabulares.</li><li><strong>CNN-1D:</strong> extrae patrones locales en señales o secuencias ordenadas.</li><li><strong>RNN / LSTM / GRU:</strong> modela dependencias entre instantes de una secuencia.</li></ul><p style="margin-top:15px">Las arquitecturas no son intercambiables: su pertinencia depende del tipo de datos, la pregunta y la validación.</p></aside>
-      </div>
-      <div class="note"><strong>Pregunta para la audiencia:</strong> si tenemos mediciones resumidas de temperatura y presión, ¿usaríamos el mismo modelo que para una serie continua de vibraciones?</div>
-    </div>
-
-    <div class="subsection" id="videos-aprendizaje">
-      <div class="section-label">Etapa 02 · Observa</div>
-      <h3>Videos: cómo funcionan las redes neuronales</h3>
-      <p class="sublead">Recursos audiovisuales organizados por arquitectura. Se conservan los nombres de los cuatro MP4 que ya utiliza tu repositorio en la carpeta <code>videos/</code>.</p>
-      <div class="media-grid">
-        <article class="media-item"><h4>01 · Feedforward / MLP</h4><video controls playsinline preload="metadata"><source src="videos/feedforward_mlp.mp4" type="video/mp4">Tu navegador no admite reproducción de video.</video><p>Capas densas, propagación hacia adelante y ajuste de pesos.</p></article>
-        <article class="media-item"><h4>02 · Convolucional / CNN-1D</h4><video controls playsinline preload="metadata"><source src="videos/cnn_1d.mp4" type="video/mp4">Tu navegador no admite reproducción de video.</video><p>Filtros, convoluciones y detección de patrones locales.</p></article>
-        <article class="media-item"><h4>03 · Recurrentes / LSTM y GRU</h4><video controls playsinline preload="metadata"><source src="videos/lstm_gru.mp4" type="video/mp4">Tu navegador no admite reproducción de video.</video><p>Memoria, estados ocultos y compuertas en secuencias temporales.</p></article>
-        <article class="media-item"><h4>04 · Redes neuronales en acción</h4><video controls playsinline preload="metadata"><source src="videos/simple_rnn.mp4" type="video/mp4">Tu navegador no admite reproducción de video.</video><p>Ejemplo complementario sobre el procesamiento secuencial.</p></article>
-      </div>
-      <div class="reel-area">
-        <iframe class="reel-screen" title="Reel de Facebook sobre redes neuronales" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F915927693673854&show_text=false&width=340" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
-        <div><div class="section-label">Recurso audiovisual complementario</div><h4>Reel de Facebook · Redes neuronales</h4><p>Reproducción dentro de la página cuando Facebook autorice la inserción. Algunos reels restringen la reproducción integrada por privacidad, configuración o navegador.</p><a class="btn blue-outline" href="https://www.facebook.com/reel/915927693673854" target="_blank" rel="noopener noreferrer">Abrir reel directamente ↗</a><div class="note">Para discutir: identifica qué parte del proceso representa la entrada, el aprendizaje y la predicción del modelo.</div></div>
-      </div>
-    </div>
-
-    <div class="subsection" id="simulador">
-      <div class="section-label">Etapa 03 · Experimenta</div>
-      <h3>Laboratorio interactivo: observa cómo aprende una red neuronal</h3>
-      <p class="sublead">Este simulador permite experimentar con una red multicapa (MLP) que aprende a clasificar puntos en dos categorías. No es un modelo industrial: su propósito es entender visualmente el entrenamiento y la generalización antes de utilizar una aplicación de mantenimiento predictivo.</p>
-      <div class="simulator-guide-grid">
-        <article class="guide-card"><span class="guide-index">01</span><h4>Configura la red</h4><p>Elige un patrón de datos, por ejemplo XOR; define capas ocultas, neuronas, activación y tasa de aprendizaje. Estas opciones modifican la capacidad y la forma de aprender del modelo.</p></article>
-        <article class="guide-card"><span class="guide-index">02</span><h4>Entrena y observa</h4><p>Presiona <strong>Entrenar</strong> y revisa la evolución de las épocas, la pérdida y la exactitud de validación. Con <strong>+ 1 época</strong> avanzas paso a paso; con <strong>Reiniciar</strong> comienzas un nuevo experimento.</p></article>
-        <article class="guide-card"><span class="guide-index">03</span><h4>Interpreta el aprendizaje</h4><p>En <strong>Arquitectura y pesos</strong> ves conexiones entre neuronas; en <strong>Frontera de decisión</strong> ves cómo se separan las clases; y en <strong>Curva de aprendizaje</strong> comparas el error de entrenamiento y validación.</p></article>
-      </div>
-      <div class="simulator-view">
-        <div class="simulator-toolbar"><div><strong>Simulador MLP · Laboratorio práctico</strong><p>Modifica un parámetro a la vez para identificar qué efecto tiene sobre el aprendizaje.</p></div><a class="btn blue-outline" href="simulador-red-neuronal.html" target="_blank" rel="noopener noreferrer">Abrir en pantalla completa ↗</a></div>
-        <iframe id="simulador-mlp" class="simulator-frame simulator-frame-large" src="simulador-red-neuronal.html" title="Laboratorio interactivo MLP: arquitectura, frontera de decisión y curva de aprendizaje" loading="lazy"></iframe>
-      </div>
-      <div class="interpret-grid">
-        <article><h4>Épocas</h4><p>Es la cantidad de recorridos de entrenamiento completados. Más épocas no garantizan mejor predicción.</p></article>
-        <article><h4>Pérdida (loss)</h4><p>Resume el error que intenta minimizar la red. Una disminución suele indicar mejor ajuste sobre los datos utilizados.</p></article>
-        <article><h4>Exactitud de validación</h4><p>Porcentaje de observaciones de validación clasificadas correctamente; sirve para comprobar el desempeño fuera de los datos de entrenamiento.</p></article>
-        <article><h4>Curvas de aprendizaje</h4><p>Si el error de entrenamiento sigue bajando, pero el de validación deja de mejorar o sube, puede existir sobreajuste.</p></article>
-      </div>
-      <div class="note"><strong>Ejercicio para la audiencia:</strong> selecciona XOR y entrena. Registra la exactitud de validación; luego modifica solamente el número de neuronas y vuelve a entrenar. Compara los resultados y argumenta si la red más compleja realmente generaliza mejor. Los resultados dependen de la inicialización y de los datos generados.</div>
-      <div class="button-row"><a class="btn blue-outline" href="https://gblanc2025.shinyapps.io/app_ANNs/" target="_blank" rel="noopener noreferrer">Explorar otro laboratorio de redes neuronales ↗</a></div>
-    </div>
-
-    <div class="subsection" id="software-shiny">
-      <div class="section-label">Etapa 04 · Aplica</div>
-      <h3>Aplicación final: mantenimiento predictivo con R Shiny</h3>
-      <p class="sublead">El laboratorio traslada la comparación metodológica a una interfaz en la que se pueden explorar datos de maquinaria, ajustar modelos y examinar resultados.</p>
-      <div class="project-action"><h3>De la predicción a una decisión de mantenimiento</h3><p><strong style="color:#fff">Situación:</strong> una máquina puede mostrar señales de degradación antes de fallar. El objetivo analítico consiste en estimar el riesgo de falla con información disponible antes del evento, evitando usar variables que revelen el resultado futuro.</p><ol><li><strong>Explora:</strong> conoce las variables operativas y cómo se define la falla.</li><li><strong>Prepara:</strong> revisa limpieza, particiones y escalamiento, según corresponda.</li><li><strong>Compara:</strong> contrasta modelos de Machine Learning clásico y Deep Learning implementados en el aplicativo.</li><li><strong>Evalúa:</strong> interpreta precisión, recall, F1, AUC y la matriz de confusión, según las métricas disponibles.</li><li><strong>Decide:</strong> argumenta qué modelo sería útil y bajo qué limitaciones podría aplicarse.</li></ol><div class="button-row"><a class="btn" href="https://ricardocastanedap.shinyapps.io/Expo_maquinas/" target="_blank" rel="noopener noreferrer">Abrir aplicación Shiny de mantenimiento ↗</a><a class="btn" href="https://0x1bir-fernando-mejia.shinyapps.io/app_ML/" target="_blank" rel="noopener noreferrer">Ver aplicación complementaria de ML ↗</a></div></div>
-      <div class="note"><strong>Rigor metodológico:</strong> antes de presentar resultados, comprueba si los datos son reales, simulados o de demostración. El portal no atribuye métricas ni mejoras de rendimiento que no hayan sido verificadas.</div>
-    </div>
-  </section>
-
-  <!-- PROYECTO 2 -->
-  <section class="section-card" id="cardiopredict">
-    <div class="project-header"><div class="project-number">02</div><div><div class="section-label">Proyecto 2 · Laboratorio académico</div><h2 class="project-title">CardioPredict AI — Deep Learning Clínico</h2></div></div>
-    <p class="project-lead">Aplicación académica desarrollada en R Shiny para explorar la clasificación de eventos cardiovasculares a cinco años. El prototipo integra análisis descriptivo, entrenamiento, evaluación y predicción individual o por lotes.</p>
-    <div class="topic-grid">
-      <article class="topic"><span class="tag">Base del ejercicio</span><h3>1.200 pacientes · 6% con evento</h3><p>Variables predictoras: edad, síntomas, frecuencia cardíaca promedio (FC) y variabilidad de la frecuencia cardíaca (VFC). La baja frecuencia de eventos exige analizar sensibilidad, precisión y falsos negativos.</p></article>
-      <article class="topic"><span class="tag">Metodología</span><h3>Partición 80/20 con validación interna</h3><p>770 registros para ajustar los pesos, 191 para validación y 239 para prueba, en la ejecución compartida. Estandarización basada únicamente en el conjunto de entrenamiento.</p></article>
-      <article class="topic"><span class="tag">Entrenamiento automático</span><h3>Cinco modelos con un botón</h3><p>MLP, SimpleRNN, LSTM, GRU y CNN 1D. La aplicación compara sus métricas de validación. Las redes recurrentes y convolucionales son experimentales sobre datos tabulares, no sobre series cardíacas reales.</p></article>
-      <article class="topic"><span class="tag">Resultados de validación</span><h3>Desempeño según la métrica</h3><p>CNN 1D registró el mayor F1 macro (0,5379); LSTM, el AUC más alto (0,6919); y MLP, el menor LogLoss (0,5304). Son resultados de validación reportados en el contenido original del portal, no de prueba externa.</p></article>
-    </div>
-    <div class="demo" style="margin-top:22px"><div><h3>Explorar CardioPredict AI</h3><p>Utiliza el laboratorio interactivo para revisar los datos, entrenar y comparar cinco arquitecturas y explorar predicciones académicas.</p><a class="btn" href="https://gblanc2025.shinyapps.io/CardioPredict_v2/" target="_blank" rel="noopener noreferrer">Abrir CardioPredict AI ↗</a></div><div class="network" style="display:flex;flex-direction:column;gap:12px;color:#fff;text-align:center"><strong style="font-size:1.25rem;color:#7dd3fc">5 arquitecturas</strong><span>MLP · SimpleRNN · LSTM</span><span>GRU · CNN-1D</span><small style="color:#cbd5e1">Comparación en un entorno interactivo</small></div></div>
-    <div class="note">Uso exclusivamente académico y exploratorio. No es una herramienta de diagnóstico ni cuenta con validación clínica externa.</div>
-  </section>
-
-  <!-- PROYECTO 3 -->
-  <section class="section-card" id="energia-industrial">
-    <div class="project-header"><div class="project-number">03</div><div><div class="section-label">Proyecto 3 · Aplicación industrial</div><h2 class="project-title">Predicción del consumo energético en industrias de alto consumo</h2></div></div>
-    <p class="project-lead">Proyecto orientado a estudiar y predecir la demanda energética de industrias con consumos elevados. El problema consiste en anticipar necesidades de energía para apoyar la planificación operativa, detectar desviaciones y evaluar oportunidades de eficiencia.</p>
-    <div class="context-grid">
-      <article class="context-card"><strong>Problema analítico</strong><p>El consumo energético puede variar según el nivel de producción, los turnos, los procesos y las condiciones de operación. Una estimación imprecisa dificulta planificar recursos y costos.</p></article>
-      <article class="context-card"><strong>Enfoque de modelado</strong><p>Explorar series históricas de consumo y variables operativas, comparar modelos predictivos apropiados y respetar el orden temporal de los datos en la validación.</p></article>
-      <article class="context-card"><strong>Resultados por estudiar</strong><p>Analizar el error de predicción mediante MAE, RMSE o métricas pertinentes y considerar su utilidad para la gestión energética. No se presentan resultados numéricos sin evidencia.</p></article>
-    </div>
-    <div class="note"><strong>Alcance:</strong> este apartado presenta el planteamiento del proyecto. Se incorporarán la base de datos, la metodología específica, las métricas y el enlace a su aplicación cuando estén disponibles.</div>
-    <div class="subsection"><h3>Tecnologías y documentación de apoyo</h3><p class="sublead">Recursos metodológicos transversales utilizados en los proyectos del portal.</p></div>
-    <div class="tech-grid">
-      <article class="tech-card"><h3>R y Shiny</h3><p>Programación estadística, interfaces interactivas, visualización y despliegue de aplicaciones.</p><a href="https://shiny.posit.co/" target="_blank" rel="noopener noreferrer">Documentación oficial de Shiny ↗</a></article>
-      <article class="tech-card"><h3>Deep Learning · Keras</h3><p>Construcción, entrenamiento y evaluación de redes neuronales desde R y Python.</p><a href="https://keras3.posit.co/" target="_blank" rel="noopener noreferrer">Keras para R ↗</a></article>
-      <article class="tech-card"><h3>Machine Learning</h3><p>Modelos clásicos, preparación de variables, particiones y validación.</p><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener noreferrer">Documentación scikit-learn ↗</a></article>
-      <article class="tech-card"><h3>Evaluación de modelos</h3><p>Exactitud, precision, recall, F1 y ROC-AUC: métricas complementarias según el problema.</p><a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer">Guía de evaluación ↗</a></article>
-      <article class="tech-card"><h3>Reproducibilidad</h3><p>Documentar origen de los datos, transformaciones, particiones, semillas, versiones y limitaciones.</p><a href="https://rmarkdown.rstudio.com/" target="_blank" rel="noopener noreferrer">R Markdown ↗</a></article>
-      <article class="tech-card"><h3>GitHub y publicación web</h3><p>Control de versiones, almacenamiento de recursos y publicación de este portal estático.</p><a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">Guía de GitHub Pages ↗</a></article>
-    </div>
-    <div class="subsection"><h3>Calidad, trazabilidad y uso responsable</h3><div class="ethics"><article class="ethic"><h3>Calidad de datos</h3><p>Revisar faltantes, sesgos, valores extremos, errores y coherencia antes del modelado.</p></article><article class="ethic"><h3>Reproducibilidad</h3><p>Registrar los datos, parámetros y decisiones para que la comparación pueda repetirse.</p></article><article class="ethic"><h3>Interpretación y ética</h3><p>Comunicar limitaciones, evitar extrapolaciones injustificadas y no automatizar decisiones sensibles sin supervisión.</p></article></div></div>
-  </section>
+<section class="section-card" id="equipo">
+<div class="section-label">01 · Equipo</div>
+<h2>Equipo de desarrollo</h2>
+<p class="lead">Equipo académico del Grupo 3 de la Maestría en Estadística, mención Ciencia de Datos e Inteligencia Artificial.</p>
+<div class="team-grid">
+<article class="person"><img alt="Fotografía de Ricardo Castanneda" src="assets/Ricardo.png"/><h3>Ricardo Castanneda</h3><p>Grupo 3</p></article>
+<article class="person"><img alt="Fotografía de Glenda Blanc" src="assets/Glenda2.png"/><h3>Glenda Blanc</h3><p>Grupo 3</p></article>
+<article class="person"><img alt="Fotografía de Estefania Paucar" src="assets/Estefania.png"/><h3>Estefania Paucar</h3><p>Grupo 3</p></article>
+<article class="person"><img alt="Fotografía de Jimmy Montoya" src="assets/Jimmy.png"/><h3>Jimmy Montoya</h3><p>Grupo 3</p></article>
+</div>
+</section>
+<section class="section-card" id="ciclo">
+<div class="section-label">02 · Metodología</div>
+<h2>Ciclo de Ciencia de Datos</h2>
+<p class="lead">Esta sección le da a la página una secuencia lógica y evita presentar herramientas aisladas. El visitante puede entender cómo se llega desde una pregunta hasta una decisión basada en evidencia.</p>
+<div class="process">
+<article class="step"><div class="num">1</div><h3>Problema</h3><p>Definir la pregunta, objetivo analítico y variable de interés.</p></article>
+<article class="step"><div class="num">2</div><h3>EDA</h3><p>Revisar calidad, distribuciones, faltantes, outliers y relaciones.</p></article>
+<article class="step"><div class="num">3</div><h3>Preparación</h3><p>Transformar, codificar, escalar y seleccionar variables.</p></article>
+<article class="step"><div class="num">4</div><h3>Modelado</h3><p>Entrenar modelos estadísticos, ML o redes neuronales.</p></article>
+<article class="step"><div class="num">5</div><h3>Evaluación</h3><p>Validar desempeño, interpretar resultados y comunicar hallazgos.</p></article>
+</div>
+</section>
+<section class="section-card" id="tecnicas">
+<div class="section-label">03 · Contenidos propuestos</div>
+<h2>Machine Learning, Deep Learning y analítica avanzada</h2>
+<p class="lead">En lugar de limitar la página a “ML vs. DL”, conviene presentar un mapa de técnicas. Así se ve más académico y permite crecer con nuevos trabajos del grupo.</p>
+<div class="topic-grid">
+<article class="topic"><span class="tag">Supervisado</span><h3>Clasificación y predicción</h3><p>Regresión logística, árboles, Random Forest, XGBoost y otros modelos para predecir clases o resultados numéricos.</p></article>
+<article class="topic"><span class="tag">No supervisado</span><h3>Segmentación y reducción de dimensión</h3><p>Clustering, componentes principales y técnicas para descubrir estructuras sin una etiqueta previa.</p></article>
+<article class="topic"><span class="tag">Deep Learning</span><h3>Redes neuronales artificiales</h3><p>Arquitecturas feedforward, funciones de activación, optimización, regularización y criterios para evitar sobreajuste.</p></article>
+<article class="topic"><span class="tag">Interpretabilidad</span><h3>Explicación de modelos</h3><p>Importancia de variables, sensibilidad y análisis de errores para que las predicciones sean entendibles y accionables.</p></article>
+</div>
+</section>
+<!-- 04 · PROYECTOS DE APLICACIÓN -->
+<section class="project-intro" id="aplicaciones">
+<div class="section-label">04 · Aplicaciones · Portafolio del webinar</div>
+<h2>Tres proyectos, de la comprensión a la aplicación</h2>
+<p>Una ruta académica para explicar las arquitecturas de inteligencia artificial, experimentar con sus decisiones y aplicar modelos en problemas industriales y clínicos. El portal reúne aprendizaje guiado, simuladores, aplicaciones Shiny y documentación.</p>
+<div class="project-jump">
+<a href="#proyecto-industrial">01 · Mantenimiento predictivo <small>Machine Learning clásico vs. Deep Learning · webinar</small></a>
+<a href="#cardiopredict">02 · CardioPredict AI <small>Deep Learning clínico · laboratorio académico</small></a>
+<a href="#energia-industrial">03 · Predicción del consumo energético en industrias <small>Deep Learning · webinar</small></a>
+</div>
+</section>
+<!-- PROYECTO 1 -->
+<section class="section-card" id="proyecto-industrial">
+<div class="project-header"><div class="project-number">01</div><div><div class="section-label">Proyecto 1 · Caso central del webinar</div><h2 class="project-title">Machine Learning clásico vs. Deep Learning en mantenimiento predictivo</h2></div></div>
+<p class="project-lead">¿Podemos anticipar una posible falla en un equipo industrial antes de que provoque una parada no planificada? Este proyecto plantea una comparación de modelos para apoyar decisiones de mantenimiento a partir de variables operativas y, cuando están disponibles, señales de sensores.</p>
+<div class="context-grid">
+<article class="context-card"><strong>El problema</strong><p>Las fallas inesperadas generan interrupciones operativas, reparaciones urgentes y posibles riesgos de seguridad. El mantenimiento reactivo actúa después del evento.</p></article>
+<article class="context-card"><strong>La propuesta</strong><p>Usar datos de funcionamiento para identificar patrones asociados a fallas y comparar enfoques tradicionales de Machine Learning con redes neuronales.</p></article>
+<article class="context-card"><strong>La decisión</strong><p>Comparar desempeño y errores —en especial las fallas no detectadas— antes de elegir un modelo. Las predicciones orientan el análisis, no sustituyen la inspección técnica.</p></article>
+</div>
+<div class="subsection" id="videos-software">
+<div class="section-label">Ruta de aprendizaje · Recursos digitales</div>
+<h3>Aprender, observar, experimentar y aplicar</h3>
+<p class="sublead">La exposición sigue cuatro momentos didácticos. Cada recurso prepara al visitante para comprender el experimento final en R Shiny.</p>
+<div class="path-timeline">
+<a href="#infografia">01 · Comprende <span>Infografía comparativa de arquitecturas</span></a>
+<a href="#videos-aprendizaje">02 · Observa <span>Videos y reel audiovisual</span></a>
+<a href="#simulador">03 · Experimenta <span>Laboratorio interactivo MLP</span></a>
+<a href="#software-shiny">04 · Aplica <span>Problema industrial y aplicación Shiny</span></a>
+</div>
+</div>
+<div class="subsection" id="infografia">
+<div class="section-label">Etapa 01 · Comprende</div>
+<h3>Infografía: tres formas de aprender</h3>
+<p class="sublead">La imagen resume la estructura, el funcionamiento y los hiperparámetros de redes multicapa (MLP), convolucionales (CNN) y recurrentes (RNN).</p>
+<div class="infographic-layout">
+<figure><a aria-label="Ver infografía ampliada" href="assets/infografia-redes-neuronales.png" rel="noopener" target="_blank"><img alt="Infografía Tres formas de aprender: redes multicapa MLP, convolucional CNN y recurrente RNN" loading="lazy" src="assets/infografia-redes-neuronales.png"/></a><figcaption>Haz clic en la infografía para verla en tamaño completo.</figcaption></figure>
+<aside class="aside-note"><h4>¿Qué debemos identificar?</h4><ul><li><strong>MLP:</strong> aprende relaciones no lineales entre variables tabulares.</li><li><strong>CNN-1D:</strong> extrae patrones locales en señales o secuencias ordenadas.</li><li><strong>RNN / LSTM / GRU:</strong> modela dependencias entre instantes de una secuencia.</li></ul><p style="margin-top:15px">Las arquitecturas no son intercambiables: su pertinencia depende del tipo de datos, la pregunta y la validación.</p></aside>
+</div>
+<div class="note"><strong>Pregunta para la audiencia:</strong> si tenemos mediciones resumidas de temperatura y presión, ¿usaríamos el mismo modelo que para una serie continua de vibraciones?</div>
+</div>
+<div class="subsection" id="videos-aprendizaje">
+<div class="section-label">Etapa 02 · Observa</div>
+<h3>Videos: cómo funcionan las redes neuronales</h3>
+<p class="sublead">Recursos audiovisuales organizados por arquitectura. Se conservan los nombres de los cuatro MP4 que ya utiliza tu repositorio en la carpeta <code>videos/</code>.</p>
+<div class="media-grid">
+<article class="media-item"><h4>01 · Feedforward / MLP</h4><video controls="" playsinline="" preload="metadata"><source src="videos/feedforward_mlp.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video.</video><p>Capas densas, propagación hacia adelante y ajuste de pesos.</p></article>
+<article class="media-item"><h4>02 · Convolucional / CNN-1D</h4><video controls="" playsinline="" preload="metadata"><source src="videos/cnn_1d.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video.</video><p>Filtros, convoluciones y detección de patrones locales.</p></article>
+<article class="media-item"><h4>03 · Recurrentes / LSTM y GRU</h4><video controls="" playsinline="" preload="metadata"><source src="videos/lstm_gru.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video.</video><p>Memoria, estados ocultos y compuertas en secuencias temporales.</p></article>
+<article class="media-item"><h4>04 · Redes neuronales en acción</h4><video controls="" playsinline="" preload="metadata"><source src="videos/simple_rnn.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video.</video><p>Ejemplo complementario sobre el procesamiento secuencial.</p></article>
+</div>
+<div class="reel-area">
+<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="" class="reel-screen" loading="lazy" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F915927693673854&amp;show_text=false&amp;width=340" title="Reel de Facebook sobre redes neuronales"></iframe>
+<div><div class="section-label">Recurso audiovisual complementario</div><h4>Reel de Facebook · Redes neuronales</h4><p>Reproducción dentro de la página cuando Facebook autorice la inserción. Algunos reels restringen la reproducción integrada por privacidad, configuración o navegador.</p><a class="btn blue-outline" href="https://www.facebook.com/reel/915927693673854" rel="noopener noreferrer" target="_blank">Abrir reel directamente ↗</a><div class="note">Para discutir: identifica qué parte del proceso representa la entrada, el aprendizaje y la predicción del modelo.</div></div>
+</div>
+</div>
+<div class="subsection" id="simulador">
+<div class="section-label">Etapa 03 · Experimenta</div>
+<h3>Laboratorio interactivo: observa cómo aprende una red neuronal</h3>
+<p class="sublead">Este simulador permite experimentar con una red multicapa (MLP) que aprende a clasificar puntos en dos categorías. No es un modelo industrial: su propósito es entender visualmente el entrenamiento y la generalización antes de utilizar una aplicación de mantenimiento predictivo.</p>
+<div class="simulator-guide-grid">
+<article class="guide-card"><span class="guide-index">01</span><h4>Configura la red</h4><p>Elige un patrón de datos, por ejemplo XOR; define capas ocultas, neuronas, activación y tasa de aprendizaje. Estas opciones modifican la capacidad y la forma de aprender del modelo.</p></article>
+<article class="guide-card"><span class="guide-index">02</span><h4>Entrena y observa</h4><p>Presiona <strong>Entrenar</strong> y revisa la evolución de las épocas, la pérdida y la exactitud de validación. Con <strong>+ 1 época</strong> avanzas paso a paso; con <strong>Reiniciar</strong> comienzas un nuevo experimento.</p></article>
+<article class="guide-card"><span class="guide-index">03</span><h4>Interpreta el aprendizaje</h4><p>En <strong>Arquitectura y pesos</strong> ves conexiones entre neuronas; en <strong>Frontera de decisión</strong> ves cómo se separan las clases; y en <strong>Curva de aprendizaje</strong> comparas el error de entrenamiento y validación.</p></article>
+</div>
+<div class="simulator-view">
+<div class="simulator-toolbar"><div><strong>Simulador MLP · Laboratorio práctico</strong><p>Modifica un parámetro a la vez para identificar qué efecto tiene sobre el aprendizaje.</p></div><a class="btn blue-outline" href="simulador-red-neuronal.html" rel="noopener noreferrer" target="_blank">Abrir en pantalla completa ↗</a></div>
+<iframe class="simulator-frame simulator-frame-large" id="simulador-mlp" loading="lazy" src="simulador-red-neuronal.html" title="Laboratorio interactivo MLP: arquitectura, frontera de decisión y curva de aprendizaje"></iframe>
+</div>
+<div class="interpret-grid">
+<article><h4>Épocas</h4><p>Es la cantidad de recorridos de entrenamiento completados. Más épocas no garantizan mejor predicción.</p></article>
+<article><h4>Pérdida (loss)</h4><p>Resume el error que intenta minimizar la red. Una disminución suele indicar mejor ajuste sobre los datos utilizados.</p></article>
+<article><h4>Exactitud de validación</h4><p>Porcentaje de observaciones de validación clasificadas correctamente; sirve para comprobar el desempeño fuera de los datos de entrenamiento.</p></article>
+<article><h4>Curvas de aprendizaje</h4><p>Si el error de entrenamiento sigue bajando, pero el de validación deja de mejorar o sube, puede existir sobreajuste.</p></article>
+</div>
+<div class="note"><strong>Ejercicio para la audiencia:</strong> selecciona XOR y entrena. Registra la exactitud de validación; luego modifica solamente el número de neuronas y vuelve a entrenar. Compara los resultados y argumenta si la red más compleja realmente generaliza mejor. Los resultados dependen de la inicialización y de los datos generados.</div>
+<div class="button-row"><a class="btn blue-outline" href="https://gblanc2025.shinyapps.io/app_ANNs/" rel="noopener noreferrer" target="_blank">Explorar otro laboratorio de redes neuronales ↗</a></div>
+</div>
+<div class="subsection" id="software-shiny">
+<div class="section-label">Etapa 04 · Aplica</div>
+<h3>Aplicación final: ¿podemos anticipar las fallas industriales con Machine Learning y Deep Learning?</h3>
+<p class="sublead">Dos problemas de investigación complementarios —uno de Machine Learning clásico y otro de redes neuronales— orientan la comparación de modelos mediante los tableros interactivos en R Shiny. La meta no es solamente alcanzar una buena métrica: es justificar qué algoritmo ayuda mejor a tomar decisiones de mantenimiento.</p>
+<div class="industrial-story">
+<div class="story-main">
+<h4>El problema industrial: fallas que interrumpen la producción</h4>
+<p>Motores, bombas, compresores y turbinas pueden deteriorarse por desgaste, altas temperaturas, vibraciones y condiciones operativas exigentes. Cuando una avería ocurre de forma inesperada, puede provocar paradas de producción, retrasos, reparaciones urgentes y pérdidas económicas.</p>
+<p>El mantenimiento periódico interviene en intervalos programados; el correctivo reacciona después de una avería. El <strong>mantenimiento predictivo</strong> propone aprovechar los registros operativos y de sensores para estimar anticipadamente la probabilidad de falla y priorizar la revisión técnica de los equipos.</p>
+<p><strong>Pregunta principal:</strong> ¿qué modelos permiten identificar con mayor fiabilidad a los equipos con riesgo de falla, y qué costo tendría no detectar una falla real?</p>
+</div>
+<aside class="story-aside"><h4>¿Qué queremos predecir?</h4><p><strong>Variable objetivo:</strong> ocurrencia o ausencia de falla del equipo.</p><p><strong>Salida esperada:</strong> clasificación de riesgo y, cuando el modelo lo permite, probabilidad estimada de falla para un equipo nuevo.</p><p><strong>Decisión de negocio:</strong> priorizar inspecciones y mantenimiento, sin sustituir el criterio del personal técnico.</p></aside>
+</div>
+<h4 style="color:var(--navy);font-size:1.1rem;margin-bottom:9px">Información utilizada para anticipar una falla</h4>
+<p class="sublead">Los documentos de investigación proponen examinar variables de operación que pueden aportar señales de deterioro. Su asociación efectiva con las fallas debe comprobarse en el análisis exploratorio y la validación del modelo.</p>
+<div aria-label="Variables operativas propuestas" class="variable-pills"><span>Temperatura</span><span>Vibración</span><span>Presión</span><span>Horas de operación</span><span>Velocidad</span><span>Calidad del aceite</span></div>
+<div class="subsection"><div class="section-label">Dos enfoques para investigar el mismo problema</div><h3>¿Qué algoritmos vamos a comparar?</h3>
+<div class="model-compare">
+<article class="model-panel"><span class="model-tag">Machine Learning clásico · 6 modelos</span><h4>Modelos tradicionales de clasificación</h4><p>El primer planteamiento propone entrenar y contrastar seis algoritmos sobre variables de funcionamiento de maquinaria.</p><ul><li>Regresión logística: modelo interpretable.</li><li>Árbol de decisión: reglas de clasificación.</li><li>Random Forest: ensamble de árboles.</li><li>XGBoost: aprendizaje secuencial de árboles.</li><li>SVM: separación mediante márgenes.</li><li>KNN: clasificación por proximidad.</li></ul></article>
+<article class="model-panel"><span class="model-tag">Deep Learning · 3 modelos por ejecución</span><h4>Redes neuronales y aprendizaje profundo</h4><p>El segundo planteamiento compara una MLP, una CNN-1D y <strong>una</strong> red recurrente elegida entre tres alternativas.</p><ul><li>MLP (Feedforward): capas densas sobre variables tabulares.</li><li>CNN-1D: filtros para patrones en entradas organizadas como secuencias.</li><li>RNN: seleccionar SimpleRNN, LSTM o GRU para explorar dependencias secuenciales.</li></ul><p style="margin-top:12px"><strong>Importante:</strong> el dashboard de Deep Learning entrena MLP, CNN-1D y una variante recurrente seleccionada; no entrena las cinco arquitecturas al mismo tiempo.</p></article>
+</div>
+<div class="note"><strong>Precisión metodológica:</strong> la utilidad de CNN-1D y RNN depende de cómo se estructuren las entradas. Si las observaciones solo contienen variables tabulares independientes, no debe asumirse que existe una secuencia temporal auténtica ni que Deep Learning superará a los modelos clásicos.</div>
+</div>
+<div class="subsection"><div class="section-label">Preguntas gerenciales · Guía para el webinar</div>
+<h3>De los datos a decisiones que generan valor</h3>
+<p class="sublead">En una empresa industrial, lo relevante no es únicamente qué algoritmo obtiene la mejor calificación, sino cómo sus predicciones pueden contribuir a mantener la producción, utilizar mejor los recursos y reducir pérdidas. Los dashboards de Machine Learning y Deep Learning nos ayudarán a examinar cuatro decisiones concretas.</p>
+<ol class="research-questions">
+<li><strong>¿Qué equipos deberíamos revisar primero?</strong> ¿Cómo podemos aprovechar las alertas del modelo para priorizar el mantenimiento de la maquinaria con mayor riesgo, en lugar de intervenir todos los equipos por igual?</li>
+<li><strong>¿Qué decisión le costaría más a la empresa?</strong> ¿Detener un equipo para revisarlo cuando no era necesario o dejar funcionando uno que terminará fallando? ¿Cómo cambia esa respuesta según el impacto sobre la producción y la seguridad?</li>
+<li><strong>¿Cómo utilizaríamos mejor el presupuesto de mantenimiento?</strong> ¿Podemos organizar inspecciones, personal y repuestos a partir de la información predictiva para reducir paradas imprevistas y gastos evitables?</li>
+<li><strong>¿Qué solución recomendaríamos implementar y por qué?</strong> Entre los modelos clásicos y las redes neuronales evaluadas, ¿cuál ofrece el equilibrio más conveniente entre detección de fallas, falsas alarmas, facilidad de uso y necesidades reales de la empresa?</li>
+</ol>
+<div class="note"><strong>Propósito de la demostración:</strong> usar los resultados de ambas aplicaciones Shiny como evidencia para fundamentar decisiones operativas. Los modelos apoyan la gestión; no reemplazan la evaluación del personal de mantenimiento.</div>
+</div>
+<div class="subsection"><div class="section-label">Interpretación · De la métrica a la decisión</div><h3>¿Qué significa equivocarse en un entorno industrial?</h3>
+<div class="decision-criteria"><article><strong>Falso negativo</strong><p>El modelo clasifica como normal un equipo que realmente fallará. La organización podría omitir una inspección necesaria.</p></article><article><strong>Falso positivo</strong><p>El modelo alerta sobre una falla que no ocurre. Puede generar inspecciones innecesarias, costos y tiempos de intervención.</p></article><article><strong>Modelo útil</strong><p>No se define solo por Accuracy. Debe equilibrar Recall, otras métricas, sobreajuste, calibración y costos operativos.</p></article></div>
+<div class="project-action"><div class="action-caption">Demostración práctica en R Shiny</div><h3>Exploremos los datos, comparemos modelos y justifiquemos una decisión</h3><p>Utiliza las aplicaciones para desarrollar el análisis exploratorio, preparar datos, entrenar algoritmos, interpretar métricas y probar predicciones individuales o masivas, según las funciones disponibles en cada tablero.</p><ol><li><strong>Explorar:</strong> revisar distribuciones, valores faltantes y relaciones con la variable falla.</li><li><strong>Preparar:</strong> examinar transformaciones, particiones y tratamiento del desbalance.</li><li><strong>Entrenar:</strong> comparar los seis modelos clásicos en un tablero y las tres arquitecturas neuronales por ejecución en el otro.</li><li><strong>Evaluar:</strong> interpretar matrices de confusión, curvas ROC, métricas y posibles indicios de sobreajuste.</li><li><strong>Decidir:</strong> seleccionar un modelo y defender la recomendación a partir de resultados observados y costos de error.</li></ol><div class="button-row"><a class="btn" href="https://0x1bir-fernando-mejia.shinyapps.io/app_ML/" rel="noopener noreferrer" target="_blank">Abrir dashboard de Machine Learning ↗</a><a class="btn" href="https://ricardocastanedap.shinyapps.io/Expo_maquinas/" rel="noopener noreferrer" target="_blank">Abrir dashboard de Deep Learning ↗</a></div></div>
+<div class="note"><strong>Pregunta central para debatir:</strong> Si fueras gerente de planta, ¿preferirías recibir más alertas que requieran revisión o correr el riesgo de que una máquina falle sin aviso? ¿Qué información necesitarías para justificar esa decisión ante la dirección?</div>
+<div class="note"><strong>Alcance de los resultados:</strong> los documentos establecen objetivos y preguntas, no resultados experimentales definitivos. El portal no afirma que un algoritmo sea superior sin los valores efectivamente obtenidos en los dashboards; tampoco presupone que los datos provienen de mediciones reales.</div>
+</div>
+</div>
+</section>
+<!-- PROYECTO 2 -->
+<section class="section-card" id="cardiopredict">
+<div class="project-header"><div class="project-number">02</div><div><div class="section-label">Proyecto 2 · Laboratorio académico</div><h2 class="project-title">CardioPredict AI — Deep Learning Clínico</h2></div></div>
+<p class="project-lead">Aplicación académica desarrollada en R Shiny para explorar la clasificación de eventos cardiovasculares a cinco años. El prototipo integra análisis descriptivo, entrenamiento, evaluación y predicción individual o por lotes.</p>
+<div class="topic-grid">
+<article class="topic"><span class="tag">Base del ejercicio</span><h3>1.200 pacientes · 6% con evento</h3><p>Variables predictoras: edad, síntomas, frecuencia cardíaca promedio (FC) y variabilidad de la frecuencia cardíaca (VFC). La baja frecuencia de eventos exige analizar sensibilidad, precisión y falsos negativos.</p></article>
+<article class="topic"><span class="tag">Metodología</span><h3>Partición 80/20 con validación interna</h3><p>770 registros para ajustar los pesos, 191 para validación y 239 para prueba, en la ejecución compartida. Estandarización basada únicamente en el conjunto de entrenamiento.</p></article>
+<article class="topic"><span class="tag">Entrenamiento automático</span><h3>Cinco modelos con un botón</h3><p>MLP, SimpleRNN, LSTM, GRU y CNN 1D. La aplicación compara sus métricas de validación. Las redes recurrentes y convolucionales son experimentales sobre datos tabulares, no sobre series cardíacas reales.</p></article>
+<article class="topic"><span class="tag">Resultados de validación</span><h3>Desempeño según la métrica</h3><p>CNN 1D registró el mayor F1 macro (0,5379); LSTM, el AUC más alto (0,6919); y MLP, el menor LogLoss (0,5304). Son resultados de validación reportados en el contenido original del portal, no de prueba externa.</p></article>
+</div>
+<div class="demo" style="margin-top:22px"><div><h3>Explorar CardioPredict AI</h3><p>Utiliza el laboratorio interactivo para revisar los datos, entrenar y comparar cinco arquitecturas y explorar predicciones académicas.</p><a class="btn" href="https://gblanc2025.shinyapps.io/CardioPredict_v2/" rel="noopener noreferrer" target="_blank">Abrir CardioPredict AI ↗</a></div><div class="network" style="display:flex;flex-direction:column;gap:12px;color:#fff;text-align:center"><strong style="font-size:1.25rem;color:#7dd3fc">5 arquitecturas</strong><span>MLP · SimpleRNN · LSTM</span><span>GRU · CNN-1D</span><small style="color:#cbd5e1">Comparación en un entorno interactivo</small></div></div>
+<div class="note">Uso exclusivamente académico y exploratorio. No es una herramienta de diagnóstico ni cuenta con validación clínica externa.</div>
+</section>
+<!-- PROYECTO 3 -->
+<section class="section-card" id="energia-industrial">
+<div class="project-header"><div class="project-number">03</div><div><div class="section-label">Proyecto 3 · Aplicación industrial</div><h2 class="project-title">Predicción del consumo energético en industrias de alto consumo</h2></div></div>
+<p class="project-lead">Proyecto orientado a estudiar y predecir la demanda energética de industrias con consumos elevados. El problema consiste en anticipar necesidades de energía para apoyar la planificación operativa, detectar desviaciones y evaluar oportunidades de eficiencia.</p>
+<div class="context-grid">
+<article class="context-card"><strong>Problema analítico</strong><p>El consumo energético puede variar según el nivel de producción, los turnos, los procesos y las condiciones de operación. Una estimación imprecisa dificulta planificar recursos y costos.</p></article>
+<article class="context-card"><strong>Enfoque de modelado</strong><p>Explorar series históricas de consumo y variables operativas, comparar modelos predictivos apropiados y respetar el orden temporal de los datos en la validación.</p></article>
+<article class="context-card"><strong>Resultados por estudiar</strong><p>Analizar el error de predicción mediante MAE, RMSE o métricas pertinentes y considerar su utilidad para la gestión energética. No se presentan resultados numéricos sin evidencia.</p></article>
+</div>
+<div class="note"><strong>Alcance:</strong> este apartado presenta el planteamiento del proyecto. Se incorporarán la base de datos, la metodología específica, las métricas y el enlace a su aplicación cuando estén disponibles.</div>
+<div class="subsection"><h3>Tecnologías y documentación de apoyo</h3><p class="sublead">Recursos metodológicos transversales utilizados en los proyectos del portal.</p></div>
+<div class="tech-grid">
+<article class="tech-card"><h3>R y Shiny</h3><p>Programación estadística, interfaces interactivas, visualización y despliegue de aplicaciones.</p><a href="https://shiny.posit.co/" rel="noopener noreferrer" target="_blank">Documentación oficial de Shiny ↗</a></article>
+<article class="tech-card"><h3>Deep Learning · Keras</h3><p>Construcción, entrenamiento y evaluación de redes neuronales desde R y Python.</p><a href="https://keras3.posit.co/" rel="noopener noreferrer" target="_blank">Keras para R ↗</a></article>
+<article class="tech-card"><h3>Machine Learning</h3><p>Modelos clásicos, preparación de variables, particiones y validación.</p><a href="https://scikit-learn.org/stable/" rel="noopener noreferrer" target="_blank">Documentación scikit-learn ↗</a></article>
+<article class="tech-card"><h3>Evaluación de modelos</h3><p>Exactitud, precision, recall, F1 y ROC-AUC: métricas complementarias según el problema.</p><a href="https://scikit-learn.org/stable/modules/model_evaluation.html" rel="noopener noreferrer" target="_blank">Guía de evaluación ↗</a></article>
+<article class="tech-card"><h3>Reproducibilidad</h3><p>Documentar origen de los datos, transformaciones, particiones, semillas, versiones y limitaciones.</p><a href="https://rmarkdown.rstudio.com/" rel="noopener noreferrer" target="_blank">R Markdown ↗</a></article>
+<article class="tech-card"><h3>GitHub y publicación web</h3><p>Control de versiones, almacenamiento de recursos y publicación de este portal estático.</p><a href="https://docs.github.com/en/pages" rel="noopener noreferrer" target="_blank">Guía de GitHub Pages ↗</a></article>
+</div>
+<div class="subsection"><h3>Calidad, trazabilidad y uso responsable</h3><div class="ethics"><article class="ethic"><h3>Calidad de datos</h3><p>Revisar faltantes, sesgos, valores extremos, errores y coherencia antes del modelado.</p></article><article class="ethic"><h3>Reproducibilidad</h3><p>Registrar los datos, parámetros y decisiones para que la comparación pueda repetirse.</p></article><article class="ethic"><h3>Interpretación y ética</h3><p>Comunicar limitaciones, evitar extrapolaciones injustificadas y no automatizar decisiones sensibles sin supervisión.</p></article></div></div>
+</section>
 </main>
-<footer><div class="container footer-grid"><div><b>DataScience Hub</b><br><small>Grupo 3 · Maestría en Estadística · Ciencia de Datos e Inteligencia Artificial</small></div><small>© 2026 · Portal académico para GitHub Pages</small></div></footer>
+<footer><div class="container footer-grid"><div><b>DataScience Hub</b><br/><small>Grupo 3 · Maestría en Estadística · Ciencia de Datos e Inteligencia Artificial</small></div><small>© 2026 · Portal académico para GitHub Pages</small></div></footer>
 <script>
 /* Oculta únicamente el bloque de instrucciones para incrustar el simulador
    cuando este se muestra dentro del portal (ambos archivos comparten origen). */
